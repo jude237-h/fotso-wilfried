@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About · Fotso</title>
+  <!-- Font Awesome 6 (free) for clean icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    /* ----- reset & base ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(145deg, #f4f8ff 0%, #e3ebfa 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      padding: 1.5rem;
+      margin: 0;
+    }
+
+    /* ----- main card – about me ----- */
+    .about-card {
+      max-width: 880px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-radius: 56px;
+      padding: 3.2rem 3.5rem 3rem;
+      box-shadow: 0 30px 50px -18px rgba(0, 30, 70, 0.20),
+                  0 2px 10px rgba(0,0,0,0.02);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      transition: all 0.25s ease;
+    }
+
+    .about-card:hover {
+      box-shadow: 0 40px 65px -18px rgba(0, 45, 100, 0.25);
+      transform: scale(1.005);
+      background: rgba(255, 255, 255, 0.85);
+    }
+
+    /* ----- header / identity ----- */
+    .about-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem 1.8rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .avatar-icon {
+      font-size: 3.8rem;
+      color: #1a4cff;
+      background: rgba(26, 76, 255, 0.06);
+      width: 90px;
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 36px;
+      border: 1px solid rgba(26, 76, 255, 0.10);
+      transition: 0.2s;
+      flex-shrink: 0;
+    }
+
+    .avatar-icon i {
+      filter: drop-shadow(0 6px 12px rgba(26, 76, 255, 0.10));
+    }
+
+    .name-title h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: -1.2px;
+      background: linear-gradient(135deg, #0b1e42, #1a4cff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      line-height: 1.1;
+    }
+
+    .name-title .role {
+      font-size: 1.1rem;
+      font-weight: 450;
+      color: #2d3f6b;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 0.1rem;
+    }
+
+    .name-title .role i {
+      color: #1a4cff;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    /* ----- about body ----- */
+    .about-body {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      margin: 0.8rem 0 1.8rem;
+    }
+
+    .bio {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #1f2a4a;
+      background: rgba(255, 255, 255, 0.3);
+      padding: 1.2rem 1.8rem;
+      border-radius: 32px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(4px);
+    }
+
+    .bio i {
+      color: #1a4cff;
+      margin-right: 6px;
+      opacity: 0.7;
+    }
+
+    .bio strong {
+      color: #0b1e42;
+      font-weight: 600;
+    }
+
+    /* ----- stats / highlights ----- */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem 1.2rem;
+      margin: 0.2rem 0;
+    }
+
+    .stat-item {
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 28px;
+      padding: 0.9rem 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: 0.15s;
+    }
+
+    .stat-item:hover {
+      background: rgba(255, 255, 255, 0.5);
+      border-color: rgba(26, 76, 255, 0.15);
+    }
+
+    .stat-item i {
+      font-size: 1.3rem;
+      color: #1a4cff;
+      width: 2rem;
+      text-align: center;
+    }
+
+    .stat-item .stat-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-item .stat-number {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #0b1e42;
+      line-height: 1.2;
+    }
+
+    .stat-item .stat-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #4a5e88;
+      font-weight: 500;
+    }
+
+    /* ----- skills / interests (pill style) ----- */
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #1a2a54;
+      margin: 0.4rem 0 0.6rem;
+      letter-spacing: -0.2px;
+    }
+
+    .section-label i {
+      color: #1a4cff;
+      font-size: 1.1rem;
+      opacity: 0.8;
+    }
+
+    .pill-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 0.9rem;
+    }
+
+    .pill {
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      padding: 0.4rem 1.3rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 450;
+      color: #1e2d57;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.15s;
+    }
+
+    .pill i {
+      color: #1a4cff;
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+
+    .pill:hover {
+      background: rgba(26, 76, 255, 0.04);
+      border-color: rgba(26, 76, 255, 0.2);
+      transform: translateY(-1px);
+    }
+
+    /* ----- action / connect buttons ----- */
+    .connect-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem 1.2rem;
+      margin-top: 1.2rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid rgba(26, 76, 255, 0.08);
+    }
+
+    .btn-primary-about {
+      background: #1a4cff;
+      color: white;
+      border: none;
+      padding: 0.8rem 2.6rem;
+      border-radius: 80px;
+      font-weight: 600;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 8px 22px -8px rgba(26, 76, 255, 0.30);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      letter-spacing: 0.2px;
+    }
+
+    .btn-primary-about i {
+      font-size: 1rem;
+      transition: transform 0.2s ease;
+    }
+
+    .btn-primary-about:hover {
+      background: #0039e6;
+      transform: scale(1.02) translateY(-2px);
+      box-shadow: 0 14px 30px -8px rgba(26, 76, 255, 0.40);
+    }
+
+    .btn-primary-about:hover i {
+      transform: translateX(3px);
+    }
+
+    .btn-outline-about {
+      background: transparent;
+      color: #1a2649;
+      border: 1.5px solid rgba(26, 76, 255, 0.15);
+      padding: 0.8rem 2rem;
+      border-radius: 80px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(4px);
+    }
+
+    .btn-outline-about i {
+      color: #1a4cff;
+      font-size: 0.9rem;
+    }
+
+    .btn-outline-about:hover {
+      background: rgba(26, 76, 255, 0.04);
+      border-color: #1a4cff;
+      transform: scale(1.02);
+    }
+
+    /* ----- footer note ----- */
+    .footnote-about {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: #4d608a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      opacity: 0.6;
+      letter-spacing: 0.2px;
+    }
+
+    .footnote-about i {
+      color: #1a4cff;
+      font-size: 0.7rem;
+    }
+
+    /* ----- responsive ----- */
+    @media (max-width: 640px) {
+      .about-card {
+        padding: 2.2rem 1.8rem;
+        border-radius: 40px;
+      }
+
+      .about-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .name-title h1 {
+        font-size: 2.4rem;
+      }
+
+      .avatar-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 3.2rem;
+      }
+
+      .bio {
+        font-size: 0.95rem;
+        padding: 1rem 1.4rem;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .connect-group {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .btn-primary-about, .btn-outline-about {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .about-card {
+        padding: 1.8rem 1.2rem;
+      }
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* small pulse on avatar */
+    .pulse-avatar {
+      animation: softPulse 3s ease-in-out infinite;
+    }
+
+    @keyframes softPulse {
+      0% { box-shadow: 0 0 0 0 rgba(26, 76, 255, 0.04); }
+      50% { box-shadow: 0 0 0 12px rgba(26, 76, 255, 0.01); }
+      100% { box-shadow: 0 0 0 0 rgba(26, 76, 255, 0.04); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="about-card">
+
+    <!-- header: avatar + name -->
+    <div class="about-header">
+      <div class="avatar-icon pulse-avatar">
+        <i class="fas fa-user-astronaut"></i>
+      </div>
+      <div class="name-title">
+        <h1>Fotso</h1>
+        <div class="role">
+          <i class="fas fa-bolt"></i>
+          <span>builder · creator · lifelong learner</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- about body -->
+    <div class="about-body">
+
+      <!-- bio -->
+      <div class="bio">
+        <i class="fas fa-quote-left" style="opacity: 0.3; margin-right: 4px;"></i>
+        Hey, I'm <strong>Fotso</strong> — I craft digital experiences with a human touch. 
+        I believe in clean code, meaningful design, and the power of instant connection. 
+        Whether it's a landing page, a tool, or a full product, I bring curiosity and care to every line.
+        <i class="fas fa-quote-right" style="opacity: 0.3; margin-left: 4px;"></i>
+      </div>
+
+      <!-- stats / mini highlights -->
+      <div class="stats-grid">
+        <div class="stat-item">
+          <i class="fas fa-code"></i>
+          <div class="stat-content">
+            <span class="stat-number">4+</span>
+            <span class="stat-label">years craft</span>
+          </div>
+        </div>
+        <div class="stat-item">
+          <i class="fas fa-rocket"></i>
+          <div class="stat-content">
+            <span class="stat-number">12</span>
+            <span class="stat-label">projects shipped</span>
+          </div>
+        </div>
+        <div class="stat-item">
+          <i class="fas fa-heart"></i>
+          <div class="stat-content">
+            <span class="stat-number">∞</span>
+            <span class="stat-label">curiosity</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- skills & interests -->
+      <div>
+        <div class="section-label">
+          <i class="fas fa-circle" style="font-size: 0.5rem;"></i>
+          <span>core interests</span>
+          <i class="fas fa-chevron-right" style="font-size: 0.6rem; opacity: 0.4;"></i>
+        </div>
+        <div class="pill-group">
+          <span class="pill"><i class="fas fa-cube"></i> Web dev</span>
+          <span class="pill"><i class="fas fa-paint-brush"></i> UI/UX</span>
+          <span class="pill"><i class="fas fa-cloud"></i> Cloud</span>
+          <span class="pill"><i class="fas fa-robot"></i> AI tinkerer</span>
+          <span class="pill"><i class="fas fa-leaf"></i> Sustainability</span>
+          <span class="pill"><i class="fas fa-music"></i> Jazz</span>
+        </div>
+      </div>
+
+      <!-- extra: values / quote -->
+      <div style="margin-top: 0.2rem; font-size: 0.95rem; color: #2f4070; background: rgba(255,255,255,0.2); padding: 0.6rem 1.4rem; border-radius: 40px; border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(4px); display: inline-block; align-self: flex-start;">
+        <i class="fas fa-sparkles" style="color: #1a4cff; margin-right: 8px;"></i>
+        “build with intention, ship with warmth”
+      </div>
+    </div>
+
+    <!-- connect / actions -->
+    <div class="connect-group">
+      <button class="btn-primary-about" onclick="alert('📬 Let’s connect — reach out anytime!')">
+        <span>Say hello</span>
+        <i class="fas fa-paper-plane"></i>
+      </button>
+      <button class="btn-outline-about" onclick="alert('🌐 Check out my latest work.')">
+        <i class="fas fa-globe"></i>
+        <span>Portfolio</span>
+      </button>
+      <button class="btn-outline-about" onclick="alert('🐦 Find me on Twitter / X.')">
+        <i class="fab fa-twitter"></i>
+        <span>Twitter</span>
+      </button>
+    </div>
+
+    <!-- subtle footer -->
+    <div class="footnote-about">
+      <i class="fas fa-asterisk" style="font-size: 0.5rem;"></i>
+      <span>always building · always learning</span>
+      <i class="fas fa-circle" style="font-size: 0.25rem; opacity: 0.3;"></i>
+      <span style="display: inline-flex; align-items: center; gap: 4px;">
+        <i class="fas fa-crown" style="font-size: 0.6rem; opacity: 0.3;"></i>
+        Fotso
+      </span>
+    </div>
+
+    <!-- tiny interactive hint -->
+    <div style="margin-top: 0.6rem; font-size: 0.6rem; letter-spacing: 0.2px; color: #6b7fa5; opacity: 0.25; user-select: none; text-align: center;">
+      <i class="fas fa-mouse-pointer"></i> double‑click card · press "A" for about
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      // double-click on card triggers a personal message
+      const card = document.querySelector('.about-card');
+      if (card) {
+        card.addEventListener('dblclick', function(e) {
+          if (e.target.closest('button')) return;
+          alert('👋 Hey, Fotso here! Thanks for stopping by. (double-click magic)');
+        });
+      }
+
+      // keyboard shortcut: 'a' or 'A' for about instant message
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'a' || e.key === 'A') {
+          if (!e.ctrlKey && !e.metaKey && !e.altKey) {
+            e.preventDefault();
+            alert('📖 About Fotso: builder, creator, human. (you pressed “A”)');
+          }
+        }
+      });
+
+      // console greeting
+      console.log('%c👤 Fotso · about page', 'font-size: 16px; font-weight: 600; color: #1a4cff; background: #edf3ff; padding: 6px 14px; border-radius: 30px;');
+      console.log('%c✨ double‑click the card or press "A" for a personal note', 'font-size: 12px; color: #2d3f6b;');
+    })();
+  </script>
+
+</body>
+</html>
