@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact · Fotso</title>
+  <!-- Font Awesome 6 (free) for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    /* ----- reset & base ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(145deg, #f4f8ff 0%, #e3ebfa 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      padding: 1.5rem;
+      margin: 0;
+    }
+
+    /* ----- main card – contact ----- */
+    .contact-card {
+      max-width: 860px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-radius: 56px;
+      padding: 3rem 3.5rem 3rem;
+      box-shadow: 0 30px 50px -18px rgba(0, 30, 70, 0.20),
+                  0 2px 10px rgba(0,0,0,0.02);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      transition: all 0.25s ease;
+    }
+
+    .contact-card:hover {
+      box-shadow: 0 40px 65px -18px rgba(0, 45, 100, 0.25);
+      transform: scale(1.005);
+      background: rgba(255, 255, 255, 0.85);
+    }
+
+    /* ----- header ----- */
+    .contact-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem 1.8rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.8rem;
+    }
+
+    .contact-icon {
+      font-size: 3.4rem;
+      color: #1a4cff;
+      background: rgba(26, 76, 255, 0.06);
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 36px;
+      border: 1px solid rgba(26, 76, 255, 0.10);
+      transition: 0.2s;
+      flex-shrink: 0;
+    }
+
+    .contact-icon i {
+      filter: drop-shadow(0 6px 12px rgba(26, 76, 255, 0.10));
+    }
+
+    .contact-title h1 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      letter-spacing: -1.2px;
+      background: linear-gradient(135deg, #0b1e42, #1a4cff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      line-height: 1.1;
+    }
+
+    .contact-title .sub {
+      font-size: 1rem;
+      font-weight: 450;
+      color: #2d3f6b;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 0.1rem;
+    }
+
+    .contact-title .sub i {
+      color: #1a4cff;
+      font-size: 0.8rem;
+      opacity: 0.7;
+    }
+
+    /* ----- contact body (form + info) ----- */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem 2.2rem;
+      margin: 0.6rem 0 0.8rem;
+    }
+
+    /* form styles */
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #1a2a54;
+      margin-bottom: 0.3rem;
+      letter-spacing: 0.2px;
+    }
+
+    .form-group label i {
+      color: #1a4cff;
+      margin-right: 6px;
+      font-size: 0.8rem;
+      opacity: 0.7;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.7rem 1.1rem;
+      border-radius: 30px;
+      border: 1.5px solid rgba(26, 76, 255, 0.10);
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(4px);
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+      color: #0b1e42;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #1a4cff;
+      background: rgba(255, 255, 255, 0.7);
+      box-shadow: 0 0 0 4px rgba(26, 76, 255, 0.04);
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #6b7fa5;
+      font-weight: 350;
+      opacity: 0.6;
+    }
+
+    .form-group textarea {
+      min-height: 100px;
+      resize: vertical;
+      border-radius: 24px;
+    }
+
+    .btn-submit {
+      background: #1a4cff;
+      color: white;
+      border: none;
+      padding: 0.8rem 2.4rem;
+      border-radius: 80px;
+      font-weight: 600;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 8px 22px -8px rgba(26, 76, 255, 0.30);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      letter-spacing: 0.2px;
+      width: 100%;
+      justify-content: center;
+      margin-top: 0.2rem;
+    }
+
+    .btn-submit i {
+      font-size: 0.95rem;
+      transition: transform 0.2s ease;
+    }
+
+    .btn-submit:hover {
+      background: #0039e6;
+      transform: scale(1.02) translateY(-2px);
+      box-shadow: 0 14px 30px -8px rgba(26, 76, 255, 0.40);
+    }
+
+    .btn-submit:hover i {
+      transform: translateX(3px);
+    }
+
+    /* right side – contact info */
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .info-item {
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 28px;
+      padding: 0.9rem 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: 0.15s;
+    }
+
+    .info-item:hover {
+      background: rgba(255, 255, 255, 0.5);
+      border-color: rgba(26, 76, 255, 0.12);
+    }
+
+    .info-item i {
+      font-size: 1.3rem;
+      color: #1a4cff;
+      width: 2rem;
+      text-align: center;
+      opacity: 0.8;
+    }
+
+    .info-item .info-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .info-item .info-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #4a5e88;
+      font-weight: 500;
+    }
+
+    .info-item .info-value {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #0b1e42;
+      word-break: break-word;
+    }
+
+    .info-item .info-value a {
+      color: #1a4cff;
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(26, 76, 255, 0.2);
+    }
+
+    .info-item .info-value a:hover {
+      border-bottom: 1px solid #1a4cff;
+    }
+
+    /* social mini */
+    .social-mini {
+      display: flex;
+      gap: 0.8rem;
+      margin-top: 0.4rem;
+      flex-wrap: wrap;
+    }
+
+    .social-mini a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 40px;
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      color: #1a2649;
+      font-size: 1.1rem;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .social-mini a:hover {
+      background: rgba(26, 76, 255, 0.04);
+      border-color: #1a4cff;
+      transform: translateY(-2px);
+      color: #1a4cff;
+    }
+
+    /* ----- footer note ----- */
+    .footnote-contact {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: #4d608a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      opacity: 0.6;
+      letter-spacing: 0.2px;
+    }
+
+    .footnote-contact i {
+      color: #1a4cff;
+      font-size: 0.7rem;
+    }
+
+    /* ----- responsive ----- */
+    @media (max-width: 720px) {
+      .contact-card {
+        padding: 2.2rem 1.8rem;
+        border-radius: 40px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+      }
+
+      .contact-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .contact-title h1 {
+        font-size: 2.2rem;
+      }
+
+      .contact-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 2.8rem;
+      }
+
+      .btn-submit {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .contact-card {
+        padding: 1.8rem 1.2rem;
+      }
+    }
+
+    /* pulse on icon */
+    .pulse-contact {
+      animation: softPulse 3s ease-in-out infinite;
+    }
+
+    @keyframes softPulse {
+      0% { box-shadow: 0 0 0 0 rgba(26, 76, 255, 0.04); }
+      50% { box-shadow: 0 0 0 12px rgba(26, 76, 255, 0.01); }
+      100% { box-shadow: 0 0 0 0 rgba(26, 76, 255, 0.04); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contact-card">
+
+    <!-- header -->
+    <div class="contact-header">
+      <div class="contact-icon pulse-contact">
+        <i class="fas fa-envelope-open-text"></i>
+      </div>
+      <div class="contact-title">
+        <h1>Contact</h1>
+        <div class="sub">
+          <i class="fas fa-bolt"></i>
+          <span>let's connect — instantly</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- contact grid: form + info -->
+    <div class="contact-grid">
+
+      <!-- left: form -->
+      <div>
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label for="name"><i class="far fa-user"></i> Your name</label>
+            <input type="text" id="name" placeholder="e.g. Fotso" required />
+          </div>
+          <div class="form-group">
+            <label for="email"><i class="far fa-envelope"></i> Email address</label>
+            <input type="email" id="email" placeholder="hello@fotso.dev" required />
+          </div>
+          <div class="form-group">
+            <label for="message"><i class="far fa-comment-dots"></i> Message</label>
+            <textarea id="message" placeholder="Tell me what you're thinking…" required></textarea>
+          </div>
+          <button type="submit" class="btn-submit">
+            <span>Send message</span>
+            <i class="fas fa-arrow-right"></i>
+          </button>
+          <div style="margin-top: 0.6rem; font-size: 0.7rem; color: #4a5e88; opacity: 0.5; text-align: center;">
+            <i class="fas fa-lock" style="margin-right: 4px;"></i> your info stays private
+          </div>
+        </form>
+      </div>
+
+      <!-- right: contact info -->
+      <div class="contact-info">
+        <div class="info-item">
+          <i class="fas fa-envelope"></i>
+          <div class="info-content">
+            <span class="info-label">Email</span>
+            <span class="info-value"><a href="mailto:hello@fotso.dev">hello@fotso.dev</a></span>
+          </div>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-map-pin"></i>
+          <div class="info-content">
+            <span class="info-label">Location</span>
+            <span class="info-value">Yaoundé · Cameroon</span>
+          </div>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-clock"></i>
+          <div class="info-content">
+            <span class="info-label">Response time</span>
+            <span class="info-value"><i class="fas fa-bolt" style="color: #1a4cff; font-size: 0.7rem;"></i> within 24h</span>
+          </div>
+        </div>
+
+        <!-- social -->
+        <div style="margin-top: 0.2rem;">
+          <div style="font-size: 0.75rem; font-weight: 500; color: #1a2a54; margin-bottom: 0.5rem; letter-spacing: 0.3px; display: flex; align-items: center; gap: 6px;">
+            <i class="fas fa-share-alt" style="color: #1a4cff; font-size: 0.8rem;"></i> connect socially
+          </div>
+          <div class="social-mini">
+            <a href="#" aria-label="Twitter" onclick="alert('🐦 Find me on Twitter!')"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="GitHub" onclick="alert('🐙 Check my code on GitHub.')"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="LinkedIn" onclick="alert('🔗 Let\'s connect on LinkedIn.')"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Instagram" onclick="alert('📸 Follow me on Instagram.')"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <!-- extra note -->
+        <div style="margin-top: 0.6rem; font-size: 0.8rem; color: #2d4070; background: rgba(255,255,255,0.2); padding: 0.5rem 1.2rem; border-radius: 40px; border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(4px); display: inline-block; align-self: flex-start;">
+          <i class="fas fa-sparkles" style="color: #1a4cff; margin-right: 8px;"></i>
+          I reply to every message.
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footnote-contact">
+      <i class="fas fa-asterisk" style="font-size: 0.5rem;"></i>
+      <span>always open · let's build something</span>
+      <i class="fas fa-circle" style="font-size: 0.25rem; opacity: 0.3;"></i>
+      <span style="display: inline-flex; align-items: center; gap: 4px;">
+        <i class="fas fa-crown" style="font-size: 0.6rem; opacity: 0.3;"></i>
+        Fotso
+      </span>
+    </div>
+
+    <!-- tiny interactive hint -->
+    <div style="margin-top: 0.6rem; font-size: 0.6rem; letter-spacing: 0.2px; color: #6b7fa5; opacity: 0.25; user-select: none; text-align: center;">
+      <i class="fas fa-mouse-pointer"></i> double‑click card · press "C" for contact
+    </div>
+  </div>
+
+  <script>
+    // ----- form submit handler (demo) -----
+    function handleSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !email || !message) {
+        alert('✋ Please fill in all fields before sending.');
+        return;
+      }
+
+      // simple email validation
+      if (!email.includes('@') || !email.includes('.')) {
+        alert('📧 Please enter a valid email address.');
+        return;
+      }
+
+      alert('✅ Thanks, ' + name + '! Your message was sent instantly. (demo)');
+      // In a real scenario, you'd POST to a backend here.
+      document.getElementById('contactForm').reset();
+    }
+
+    // ----- double-click on card -----
+    const card = document.querySelector('.contact-card');
+    if (card) {
+      card.addEventListener('dblclick', function(e) {
+        if (e.target.closest('button') || e.target.closest('a')) return;
+        alert('📬 Fotso here — thanks for reaching out! (double-click magic)');
+      });
+    }
+
+    // ----- keyboard shortcut: 'c' or 'C' for contact -----
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'c' || e.key === 'C') {
+        if (!e.ctrlKey && !e.metaKey && !e.altKey) {
+          e.preventDefault();
+          alert('💬 Contact Fotso: hello@fotso.dev (you pressed “C”)');
+        }
+      }
+    });
+
+    // console greeting
+    console.log('%c📬 Contact · Fotso', 'font-size: 16px; font-weight: 600; color: #1a4cff; background: #edf3ff; padding: 6px 14px; border-radius: 30px;');
+    console.log('%c✨ double‑click the card or press "C" for a quick contact reminder', 'font-size: 12px; color: #2d3f6b;');
+  </script>
+
+</body>
+</html>
