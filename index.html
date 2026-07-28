@@ -1,11 +1,9 @@
-This is a complete HTML document for a personal homepage. It's designed as a central hub for "Fotso Wilfried Brayan Junior," featuring a modern, glass-morphism card with navigation to About and Contact pages.
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fotso · home</title>
+  <title>FOTSO · home</title>
   <!-- Font Awesome 6 (free) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <style>
@@ -17,7 +15,7 @@ This is a complete HTML document for a personal homepage. It's designed as a cen
     }
 
     body {
-      background: linear-gradient(145deg, #f4f8ff 0%, #e3ebfa 100%);
+      background: radial-gradient(circle at 10% 30%, #f9f3ff 0%, #d9e2fc 80%);
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -27,29 +25,29 @@ This is a complete HTML document for a personal homepage. It's designed as a cen
       margin: 0;
     }
 
-    /* ----- main card – index hub ----- */
+    /* ----- main card – index hub (elevated) ----- */
     .index-card {
       max-width: 820px;
       width: 100%;
-      background: rgba(255, 255, 255, 0.72);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-radius: 56px;
-      padding: 3.2rem 3.5rem 3rem;
-      box-shadow: 0 30px 50px -18px rgba(0, 30, 70, 0.20),
-                  0 2px 10px rgba(0,0,0,0.02);
-      border: 1px solid rgba(255, 255, 255, 0.6);
-      transition: all 0.25s ease;
+      background: rgba(255, 251, 255, 0.68);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 64px;
+      padding: 3.4rem 3.5rem 3rem;
+      box-shadow: 0 40px 70px -20px rgba(30, 40, 100, 0.25),
+                  0 8px 32px -8px rgba(0, 20, 60, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      transition: all 0.3s ease;
       text-align: center;
     }
 
     .index-card:hover {
-      box-shadow: 0 40px 65px -18px rgba(0, 45, 100, 0.25);
-      transform: scale(1.005);
-      background: rgba(255, 255, 255, 0.85);
+      box-shadow: 0 50px 80px -18px rgba(40, 60, 150, 0.30);
+      transform: scale(1.008);
+      background: rgba(255, 251, 255, 0.82);
     }
 
-    /* ----- header / identity – full name ----- */
+    /* ----- header / identity – full name prominent ----- */
     .index-header {
       display: flex;
       flex-direction: column;
@@ -58,90 +56,116 @@ This is a complete HTML document for a personal homepage. It's designed as a cen
     }
 
     .avatar-icon {
-      font-size: 4rem;
-      color: #1a4cff;
-      background: rgba(26, 76, 255, 0.06);
-      width: 100px;
-      height: 100px;
+      font-size: 4.2rem;
+      color: #4a3aff;
+      background: rgba(74, 58, 255, 0.07);
+      width: 110px;
+      height: 110px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 40px;
-      border: 1px solid rgba(26, 76, 255, 0.10);
-      transition: 0.2s;
+      border-radius: 44px;
+      border: 1px solid rgba(74, 58, 255, 0.12);
+      transition: 0.25s;
       margin-bottom: 0.8rem;
+      box-shadow: 0 8px 24px -6px rgba(74, 58, 255, 0.08);
     }
 
     .avatar-icon i {
-      filter: drop-shadow(0 6px 12px rgba(26, 76, 255, 0.10));
+      filter: drop-shadow(0 8px 16px rgba(74, 58, 255, 0.12));
     }
 
     .index-header h1 {
-      font-size: 2.8rem;
+      font-size: 3.2rem;
       font-weight: 700;
       letter-spacing: -1px;
-      background: linear-gradient(135deg, #0b1e42, #1a4cff);
+      background: linear-gradient(145deg, #1a1f4e, #3b2bff);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
       line-height: 1.2;
+      margin-bottom: 0.15rem;
     }
 
-    .index-header .full-name {
-      font-size: 1.1rem;
-      font-weight: 400;
-      color: #2d3f6b;
-      display: flex;
+    /* full name – now displayed as a stylish badge */
+    .full-name-badge {
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
       gap: 10px;
-      flex-wrap: wrap;
+      background: rgba(74, 58, 255, 0.04);
+      padding: 0.35rem 1.6rem 0.35rem 1.4rem;
+      border-radius: 60px;
+      border: 1px solid rgba(74, 58, 255, 0.08);
+      backdrop-filter: blur(4px);
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: #1f2a5c;
+      letter-spacing: 0.3px;
       margin-top: 0.2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
     }
 
-    .index-header .full-name i {
-      color: #1a4cff;
+    .full-name-badge i {
+      color: #4a3aff;
       font-size: 0.8rem;
       opacity: 0.6;
     }
 
-    .index-header .full-name .name-badge {
-      background: rgba(26, 76, 255, 0.04);
-      padding: 0.2rem 1rem 0.2rem 0.9rem;
-      border-radius: 40px;
-      border: 1px solid rgba(26, 76, 255, 0.06);
-      font-weight: 450;
-      letter-spacing: 0.2px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+    .full-name-badge .name-text {
+      background: linear-gradient(135deg, #1f1f5e, #3b2bff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-weight: 600;
     }
 
-    /* ----- intro blurb ----- */
+    .tagline {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #3a4a7a;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 0.6rem;
+      background: rgba(255,255,255,0.2);
+      padding: 0.2rem 1.2rem;
+      border-radius: 40px;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .tagline i {
+      color: #4a3aff;
+      font-size: 0.8rem;
+      opacity: 0.7;
+    }
+
+    /* ----- intro blurb (softer) ----- */
     .intro-blurb {
       font-size: 1.05rem;
       line-height: 1.7;
       color: #1f2a4a;
-      background: rgba(255, 255, 255, 0.3);
-      padding: 1.2rem 1.8rem;
-      border-radius: 32px;
-      border: 1px solid rgba(255, 255, 255, 0.5);
+      background: rgba(255, 255, 255, 0.4);
+      padding: 1.3rem 2rem;
+      border-radius: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.6);
       backdrop-filter: blur(4px);
-      margin-bottom: 2.2rem;
+      margin-bottom: 2.4rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
     }
 
     .intro-blurb i {
-      color: #1a4cff;
+      color: #4a3aff;
       margin-right: 6px;
-      opacity: 0.7;
+      opacity: 0.6;
     }
 
     .intro-blurb strong {
       font-weight: 600;
-      color: #0b1e42;
+      color: #1b1f4e;
     }
 
-    /* ----- navigation grid (about + contact) ----- */
+    /* ----- navigation grid (about + contact) with fresh colors ----- */
     .nav-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -150,39 +174,46 @@ This is a complete HTML document for a personal homepage. It's designed as a cen
     }
 
     .nav-card {
-      background: rgba(255, 255, 255, 0.3);
-      backdrop-filter: blur(4px);
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      border-radius: 32px;
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      border-radius: 36px;
       padding: 1.8rem 1.5rem;
       text-decoration: none;
       color: inherit;
-      transition: all 0.2s ease;
+      transition: all 0.25s ease;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.5rem;
       cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
     }
 
     .nav-card:hover {
-      background: rgba(255, 255, 255, 0.55);
-      border-color: rgba(26, 76, 255, 0.15);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 28px -12px rgba(26, 76, 255, 0.12);
+      background: rgba(255, 255, 255, 0.7);
+      border-color: rgba(74, 58, 255, 0.20);
+      transform: translateY(-6px);
+      box-shadow: 0 18px 36px -14px rgba(74, 58, 255, 0.15);
     }
 
     .nav-card i {
-      font-size: 2.2rem;
-      color: #1a4cff;
+      font-size: 2.4rem;
+      color: #4a3aff;
       opacity: 0.85;
+      transition: 0.2s;
+    }
+
+    .nav-card:hover i {
+      opacity: 1;
+      transform: scale(1.02);
     }
 
     .nav-card .nav-label {
       font-weight: 600;
       font-size: 1.3rem;
       color: #0b1e42;
-      letter-spacing: -0.3px;
+      letter-spacing: -0.2px;
     }
 
     .nav-card .nav-desc {
@@ -194,26 +225,26 @@ This is a complete HTML document for a personal homepage. It's designed as a cen
 
     .nav-card .nav-arrow {
       font-size: 0.8rem;
-      color: #1a4cff;
-      opacity: 0.5;
-      transition: 0.2s;
+      color: #4a3aff;
+      opacity: 0.4;
+      transition: 0.25s;
       margin-top: 0.2rem;
     }
 
     .nav-card:hover .nav-arrow {
       opacity: 1;
-      transform: translateX(4px);
+      transform: translateX(6px);
     }
 
-    /* ----- extra: quick stats / vibe ----- */
+    /* ----- vibe row (extra flair) ----- */
     .vibe-row {
       display: flex;
       justify-content: center;
       gap: 1.5rem 2.5rem;
       flex-wrap: wrap;
-      margin: 1.6rem 0 0.4rem;
+      margin: 1.8rem 0 0.4rem;
       padding-top: 1.4rem;
-      border-top: 1px solid rgba(26, 76, 255, 0.06);
+      border-top: 1px solid rgba(74, 58, 255, 0.07);
     }
 
     .vibe-item {
@@ -222,19 +253,19 @@ This is a complete HTML document for a personal homepage. It's designed as a cen
       gap: 8px;
       color: #2d4070;
       font-size: 0.9rem;
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.25);
       padding: 0.3rem 1.2rem 0.3rem 0.9rem;
       border-radius: 40px;
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.4);
       backdrop-filter: blur(4px);
     }
 
     .vibe-item i {
-      color: #1a4cff;
+      color: #4a3aff;
       font-size: 0.9rem;
     }
 
-    /* ----- footer ----- */
+    /* ----- footer (full name included) ----- */
     .footnote-index {
       margin-top: 2rem;
       font-size: 0.8rem;
@@ -242,36 +273,47 @@ This is a complete HTML document for a personal homepage. It's designed as a cen
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      gap: 10px;
       flex-wrap: wrap;
-      opacity: 0.6;
+      opacity: 0.7;
       letter-spacing: 0.2px;
     }
 
     .footnote-index i {
-      color: #1a4cff;
+      color: #4a3aff;
       font-size: 0.7rem;
+    }
+
+    .footnote-index .foot-name {
+      background: rgba(74, 58, 255, 0.03);
+      padding: 0.1rem 0.8rem;
+      border-radius: 40px;
+      border: 1px solid rgba(74, 58, 255, 0.04);
+      font-weight: 450;
     }
 
     /* ----- responsive ----- */
     @media (max-width: 640px) {
       .index-card {
         padding: 2.2rem 1.8rem;
-        border-radius: 40px;
+        border-radius: 44px;
       }
 
       .index-header h1 {
-        font-size: 2.2rem;
+        font-size: 2.4rem;
       }
 
-      .index-header .full-name {
-        font-size: 1rem;
+      .full-name-badge {
+        font-size: 0.95rem;
+        padding: 0.3rem 1rem 0.3rem 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
       }
 
       .avatar-icon {
-        width: 80px;
-        height: 80px;
-        font-size: 3.2rem;
+        width: 85px;
+        height: 85px;
+        font-size: 3.4rem;
       }
 
       .nav-grid {
@@ -299,15 +341,15 @@ This is a complete HTML document for a personal homepage. It's designed as a cen
       }
     }
 
-    /* pulse on avatar */
+    /* pulse animation – calm and refined */
     .pulse-home {
-      animation: softPulse 3s ease-in-out infinite;
+      animation: softPulse 3.2s ease-in-out infinite;
     }
 
     @keyframes softPulse {
-      0% { box-shadow: 0 0 0 0 rgba(26, 76, 255, 0.04); }
-      50% { box-shadow: 0 0 0 14px rgba(26, 76, 255, 0.01); }
-      100% { box-shadow: 0 0 0 0 rgba(26, 76, 255, 0.04); }
+      0% { box-shadow: 0 0 0 0 rgba(74, 58, 255, 0.04); }
+      50% { box-shadow: 0 0 0 18px rgba(74, 58, 255, 0.01); }
+      100% { box-shadow: 0 0 0 0 rgba(74, 58, 255, 0.04); }
     }
   </style>
 </head>
@@ -315,29 +357,32 @@ This is a complete HTML document for a personal homepage. It's designed as a cen
 
   <div class="index-card">
 
-    <!-- header with full name -->
+    <!-- header: full name in badge + tagline -->
     <div class="index-header">
       <div class="avatar-icon pulse-home">
         <i class="fas fa-hand-peace"></i>
       </div>
-      <h1>Fotso</h1>
-      <div class="full-name">
-        <span class="name-badge">
-          <i class="fas fa-feather-alt" style="font-size: 0.7rem;"></i>
-          <span>Wilfried Brayan Junior</span>
-        </span>
-        <span style="display: flex; align-items: center; gap: 4px;">
-          <i class="fas fa-bolt" style="font-size: 0.7rem;"></i>
-          <span style="font-weight: 300;">· builder</span>
-        </span>
+      <h1>FOTSO</h1>
+      
+      <!-- full name badge: WILFRIED BRAYAN JUNIOR -->
+      <div class="full-name-badge">
+        <i class="fas fa-feather-alt"></i>
+        <span class="name-text">WILFRIED BRAYAN JUNIOR</span>
+        <i class="fas fa-circle" style="font-size: 0.35rem; opacity: 0.25; margin: 0 2px;"></i>
+        <i class="fas fa-bolt" style="font-size: 0.65rem; opacity: 0.5;"></i>
+      </div>
+
+      <div class="tagline">
+        <i class="fas fa-bolt"></i>
+        <span>builder · creator · instant</span>
       </div>
     </div>
 
-    <!-- intro – updated with full name mention -->
+    <!-- intro – updated with full name -->
     <div class="intro-blurb">
       <i class="fas fa-quote-left" style="opacity: 0.3; margin-right: 4px;"></i>
-      <strong>Fotso Wilfried Brayan Junior</strong> — I craft experiences with care.
-      <span style="display: inline-block; margin: 0 4px;">·</span> 
+      <strong>FOTSO WILFRIED BRAYAN JUNIOR</strong> — I craft experiences with care.
+      <span style="display: inline-block; margin: 0 6px;">·</span> 
       <strong>about</strong> tells my story, <strong>contact</strong> opens the door.
       <i class="fas fa-quote-right" style="opacity: 0.3; margin-left: 4px;"></i>
     </div>
@@ -372,42 +417,39 @@ This is a complete HTML document for a personal homepage. It's designed as a cen
     <div class="footnote-index">
       <i class="fas fa-asterisk" style="font-size: 0.5rem;"></i>
       <span>always open · always building</span>
-      <i class="fas fa-circle" style="font-size: 0.25rem; opacity: 0.3;"></i>
-      <span style="display: inline-flex; align-items: center; gap: 4px;">
-        <i class="fas fa-crown" style="font-size: 0.6rem; opacity: 0.3;"></i>
-        Fotso Wilfried B. J.
+      <i class="fas fa-circle" style="font-size: 0.25rem; opacity: 0.25;"></i>
+      <span class="foot-name">
+        <i class="fas fa-crown" style="font-size: 0.6rem; opacity: 0.3; margin-right: 4px;"></i>
+        FOTSO WILFRIED B. J.
       </span>
     </div>
 
     <!-- tiny interactive hint -->
-    <div style="margin-top: 0.6rem; font-size: 0.6rem; letter-spacing: 0.2px; color: #6b7fa5; opacity: 0.25; user-select: none; text-align: center;">
+    <div style="margin-top: 0.7rem; font-size: 0.6rem; letter-spacing: 0.2px; color: #6b7fa5; opacity: 0.2; user-select: none; text-align: center;">
       <i class="fas fa-mouse-pointer"></i> double‑click card · press "H" for home
     </div>
   </div>
 
   <script>
     (function() {
-      // double-click on card
       const card = document.querySelector('.index-card');
       if (card) {
         card.addEventListener('dblclick', function(e) {
-          if (e.target.closest('a')) return; // ignore nav clicks
-          alert('🏠 Welcome home, Fotso Wilfried Brayan Junior. (double-click magic)');
+          if (e.target.closest('a')) return;
+          alert('🏠 Welcome home, FOTSO WILFRIED BRAYAN JUNIOR. (double-click magic)');
         });
       }
 
-      // keyboard shortcut: 'h' or 'H' for home
       document.addEventListener('keydown', function(e) {
         if (e.key === 'h' || e.key === 'H') {
           if (!e.ctrlKey && !e.metaKey && !e.altKey) {
             e.preventDefault();
-            alert('🏡 Home · Fotso Wilfried Brayan Junior — you pressed “H” for hub.');
+            alert('🏡 Home · FOTSO WILFRIED BRAYAN JUNIOR — you pressed “H” for hub.');
           }
         }
       });
 
-      // console greeting
-      console.log('%c🏠 Fotso Wilfried Brayan Junior · index hub', 'font-size: 16px; font-weight: 600; color: #1a4cff; background: #edf3ff; padding: 6px 14px; border-radius: 30px;');
+      console.log('%c🏠 FOTSO WILFRIED BRAYAN JUNIOR · index hub', 'font-size: 16px; font-weight: 600; color: #4a3aff; background: #edf0ff; padding: 6px 14px; border-radius: 30px;');
       console.log('%c✨ double‑click the card or press "H" for a home note', 'font-size: 12px; color: #2d3f6b;');
     })();
   </script>
