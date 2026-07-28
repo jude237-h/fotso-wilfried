@@ -1,3 +1,5 @@
+This is a complete HTML document for a personal homepage. It's designed as a central hub for "Fotso Wilfried Brayan Junior," featuring a modern, glass-morphism card with navigation to About and Contact pages.
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,7 +49,7 @@
       background: rgba(255, 255, 255, 0.85);
     }
 
-    /* ----- header / identity ----- */
+    /* ----- header / identity – full name ----- */
     .index-header {
       display: flex;
       flex-direction: column;
@@ -75,30 +77,44 @@
     }
 
     .index-header h1 {
-      font-size: 3rem;
+      font-size: 2.8rem;
       font-weight: 700;
-      letter-spacing: -1.2px;
+      letter-spacing: -1px;
       background: linear-gradient(135deg, #0b1e42, #1a4cff);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      line-height: 1.1;
+      line-height: 1.2;
     }
 
-    .index-header .tagline {
+    .index-header .full-name {
       font-size: 1.1rem;
       font-weight: 400;
       color: #2d3f6b;
       display: flex;
       align-items: center;
-      gap: 8px;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
       margin-top: 0.2rem;
     }
 
-    .index-header .tagline i {
+    .index-header .full-name i {
       color: #1a4cff;
-      font-size: 0.85rem;
-      opacity: 0.7;
+      font-size: 0.8rem;
+      opacity: 0.6;
+    }
+
+    .index-header .full-name .name-badge {
+      background: rgba(26, 76, 255, 0.04);
+      padding: 0.2rem 1rem 0.2rem 0.9rem;
+      border-radius: 40px;
+      border: 1px solid rgba(26, 76, 255, 0.06);
+      font-weight: 450;
+      letter-spacing: 0.2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
 
     /* ----- intro blurb ----- */
@@ -118,6 +134,11 @@
       color: #1a4cff;
       margin-right: 6px;
       opacity: 0.7;
+    }
+
+    .intro-blurb strong {
+      font-weight: 600;
+      color: #0b1e42;
     }
 
     /* ----- navigation grid (about + contact) ----- */
@@ -240,7 +261,11 @@
       }
 
       .index-header h1 {
-        font-size: 2.4rem;
+        font-size: 2.2rem;
+      }
+
+      .index-header .full-name {
+        font-size: 1rem;
       }
 
       .avatar-icon {
@@ -290,22 +315,29 @@
 
   <div class="index-card">
 
-    <!-- header -->
+    <!-- header with full name -->
     <div class="index-header">
       <div class="avatar-icon pulse-home">
         <i class="fas fa-hand-peace"></i>
       </div>
       <h1>Fotso</h1>
-      <div class="tagline">
-        <i class="fas fa-bolt"></i>
-        <span>builder · creator · instant</span>
+      <div class="full-name">
+        <span class="name-badge">
+          <i class="fas fa-feather-alt" style="font-size: 0.7rem;"></i>
+          <span>Wilfried Brayan Junior</span>
+        </span>
+        <span style="display: flex; align-items: center; gap: 4px;">
+          <i class="fas fa-bolt" style="font-size: 0.7rem;"></i>
+          <span style="font-weight: 300;">· builder</span>
+        </span>
       </div>
     </div>
 
-    <!-- intro -->
+    <!-- intro – updated with full name mention -->
     <div class="intro-blurb">
       <i class="fas fa-quote-left" style="opacity: 0.3; margin-right: 4px;"></i>
-      Welcome to my digital space. I craft experiences with care — 
+      <strong>Fotso Wilfried Brayan Junior</strong> — I craft experiences with care.
+      <span style="display: inline-block; margin: 0 4px;">·</span> 
       <strong>about</strong> tells my story, <strong>contact</strong> opens the door.
       <i class="fas fa-quote-right" style="opacity: 0.3; margin-left: 4px;"></i>
     </div>
@@ -336,14 +368,14 @@
       <span class="vibe-item"><i class="fas fa-rocket"></i> built with care</span>
     </div>
 
-    <!-- footer -->
+    <!-- footer – includes full name -->
     <div class="footnote-index">
       <i class="fas fa-asterisk" style="font-size: 0.5rem;"></i>
       <span>always open · always building</span>
       <i class="fas fa-circle" style="font-size: 0.25rem; opacity: 0.3;"></i>
       <span style="display: inline-flex; align-items: center; gap: 4px;">
         <i class="fas fa-crown" style="font-size: 0.6rem; opacity: 0.3;"></i>
-        Fotso
+        Fotso Wilfried B. J.
       </span>
     </div>
 
@@ -360,7 +392,7 @@
       if (card) {
         card.addEventListener('dblclick', function(e) {
           if (e.target.closest('a')) return; // ignore nav clicks
-          alert('🏠 Welcome home, Fotso. (double-click magic)');
+          alert('🏠 Welcome home, Fotso Wilfried Brayan Junior. (double-click magic)');
         });
       }
 
@@ -369,13 +401,13 @@
         if (e.key === 'h' || e.key === 'H') {
           if (!e.ctrlKey && !e.metaKey && !e.altKey) {
             e.preventDefault();
-            alert('🏡 Home · Fotso — you pressed “H” for hub.');
+            alert('🏡 Home · Fotso Wilfried Brayan Junior — you pressed “H” for hub.');
           }
         }
       });
 
       // console greeting
-      console.log('%c🏠 Fotso · index hub', 'font-size: 16px; font-weight: 600; color: #1a4cff; background: #edf3ff; padding: 6px 14px; border-radius: 30px;');
+      console.log('%c🏠 Fotso Wilfried Brayan Junior · index hub', 'font-size: 16px; font-weight: 600; color: #1a4cff; background: #edf3ff; padding: 6px 14px; border-radius: 30px;');
       console.log('%c✨ double‑click the card or press "H" for a home note', 'font-size: 12px; color: #2d3f6b;');
     })();
   </script>
