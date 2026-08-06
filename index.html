@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FOTSO · home</title>
-  <!-- Font Awesome 6 (free) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fotso Wilfried - Software Engineer</title>
+  <!-- Google Fonts for a clean, modern look -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    /* ----- reset & base ----- */
+    /* ===== RESET & BASE ===== */
     * {
       margin: 0;
       padding: 0;
@@ -15,442 +19,809 @@
     }
 
     body {
-      background: radial-gradient(circle at 10% 30%, #f9f3ff 0%, #d9e2fc 80%);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      padding: 1.5rem;
-      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+      color: #0b1a33;
+      line-height: 1.6;
+      overflow-x: hidden;
     }
 
-    /* ----- main card – index hub (elevated) ----- */
-    .index-card {
-      max-width: 820px;
-      width: 100%;
-      background: rgba(255, 251, 255, 0.68);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-radius: 64px;
-      padding: 3.4rem 3.5rem 3rem;
-      box-shadow: 0 40px 70px -20px rgba(30, 40, 100, 0.25),
-                  0 8px 32px -8px rgba(0, 20, 60, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.7);
-      transition: all 0.3s ease;
-      text-align: center;
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      position: relative;
+      z-index: 2;
     }
 
-    .index-card:hover {
-      box-shadow: 0 50px 80px -18px rgba(40, 60, 150, 0.30);
-      transform: scale(1.008);
-      background: rgba(255, 251, 255, 0.82);
-    }
-
-    /* ----- header / identity – full name prominent ----- */
-    .index-header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 2rem;
-    }
-
-    .avatar-icon {
-      font-size: 4.2rem;
-      color: #4a3aff;
-      background: rgba(74, 58, 255, 0.07);
-      width: 110px;
-      height: 110px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 44px;
-      border: 1px solid rgba(74, 58, 255, 0.12);
-      transition: 0.25s;
-      margin-bottom: 0.8rem;
-      box-shadow: 0 8px 24px -6px rgba(74, 58, 255, 0.08);
-    }
-
-    .avatar-icon i {
-      filter: drop-shadow(0 8px 16px rgba(74, 58, 255, 0.12));
-    }
-
-    .index-header h1 {
-      font-size: 3.2rem;
-      font-weight: 700;
-      letter-spacing: -1px;
-      background: linear-gradient(145deg, #1a1f4e, #3b2bff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      line-height: 1.2;
-      margin-bottom: 0.15rem;
-    }
-
-    /* full name – now displayed as a stylish badge */
-    .full-name-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(74, 58, 255, 0.04);
-      padding: 0.35rem 1.6rem 0.35rem 1.4rem;
-      border-radius: 60px;
-      border: 1px solid rgba(74, 58, 255, 0.08);
-      backdrop-filter: blur(4px);
-      font-size: 1.15rem;
-      font-weight: 500;
-      color: #1f2a5c;
-      letter-spacing: 0.3px;
-      margin-top: 0.2rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-    }
-
-    .full-name-badge i {
-      color: #4a3aff;
-      font-size: 0.8rem;
-      opacity: 0.6;
-    }
-
-    .full-name-badge .name-text {
-      background: linear-gradient(135deg, #1f1f5e, #3b2bff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      font-weight: 600;
-    }
-
-    .tagline {
-      font-size: 1rem;
-      font-weight: 400;
-      color: #3a4a7a;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 0.6rem;
-      background: rgba(255,255,255,0.2);
-      padding: 0.2rem 1.2rem;
-      border-radius: 40px;
-      backdrop-filter: blur(4px);
-      border: 1px solid rgba(255,255,255,0.3);
-    }
-
-    .tagline i {
-      color: #4a3aff;
-      font-size: 0.8rem;
-      opacity: 0.7;
-    }
-
-    /* ----- intro blurb (softer) ----- */
-    .intro-blurb {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      color: #1f2a4a;
-      background: rgba(255, 255, 255, 0.4);
-      padding: 1.3rem 2rem;
-      border-radius: 40px;
-      border: 1px solid rgba(255, 255, 255, 0.6);
-      backdrop-filter: blur(4px);
-      margin-bottom: 2.4rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-    }
-
-    .intro-blurb i {
-      color: #4a3aff;
-      margin-right: 6px;
-      opacity: 0.6;
-    }
-
-    .intro-blurb strong {
-      font-weight: 600;
-      color: #1b1f4e;
-    }
-
-    /* ----- navigation grid (about + contact) with fresh colors ----- */
-    .nav-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      margin: 0.8rem 0 1.2rem;
-    }
-
-    .nav-card {
-      background: rgba(255, 255, 255, 0.4);
-      backdrop-filter: blur(6px);
-      border: 1px solid rgba(255, 255, 255, 0.6);
-      border-radius: 36px;
-      padding: 1.8rem 1.5rem;
-      text-decoration: none;
-      color: inherit;
-      transition: all 0.25s ease;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-    }
-
-    .nav-card:hover {
-      background: rgba(255, 255, 255, 0.7);
-      border-color: rgba(74, 58, 255, 0.20);
-      transform: translateY(-6px);
-      box-shadow: 0 18px 36px -14px rgba(74, 58, 255, 0.15);
-    }
-
-    .nav-card i {
-      font-size: 2.4rem;
-      color: #4a3aff;
-      opacity: 0.85;
-      transition: 0.2s;
-    }
-
-    .nav-card:hover i {
-      opacity: 1;
-      transform: scale(1.02);
-    }
-
-    .nav-card .nav-label {
-      font-weight: 600;
-      font-size: 1.3rem;
-      color: #0b1e42;
-      letter-spacing: -0.2px;
-    }
-
-    .nav-card .nav-desc {
-      font-size: 0.9rem;
-      color: #4a5e88;
-      text-align: center;
-      line-height: 1.4;
-    }
-
-    .nav-card .nav-arrow {
-      font-size: 0.8rem;
-      color: #4a3aff;
-      opacity: 0.4;
-      transition: 0.25s;
-      margin-top: 0.2rem;
-    }
-
-    .nav-card:hover .nav-arrow {
-      opacity: 1;
-      transform: translateX(6px);
-    }
-
-    /* ----- vibe row (extra flair) ----- */
-    .vibe-row {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem 2.5rem;
-      flex-wrap: wrap;
-      margin: 1.8rem 0 0.4rem;
-      padding-top: 1.4rem;
-      border-top: 1px solid rgba(74, 58, 255, 0.07);
-    }
-
-    .vibe-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: #2d4070;
-      font-size: 0.9rem;
-      background: rgba(255, 255, 255, 0.25);
-      padding: 0.3rem 1.2rem 0.3rem 0.9rem;
-      border-radius: 40px;
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      backdrop-filter: blur(4px);
-    }
-
-    .vibe-item i {
-      color: #4a3aff;
-      font-size: 0.9rem;
-    }
-
-    /* ----- footer (full name included) ----- */
-    .footnote-index {
-      margin-top: 2rem;
-      font-size: 0.8rem;
-      color: #4d608a;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      opacity: 0.7;
-      letter-spacing: 0.2px;
-    }
-
-    .footnote-index i {
-      color: #4a3aff;
-      font-size: 0.7rem;
-    }
-
-    .footnote-index .foot-name {
-      background: rgba(74, 58, 255, 0.03);
-      padding: 0.1rem 0.8rem;
-      border-radius: 40px;
-      border: 1px solid rgba(74, 58, 255, 0.04);
-      font-weight: 450;
-    }
-
-    /* ----- responsive ----- */
-    @media (max-width: 640px) {
-      .index-card {
-        padding: 2.2rem 1.8rem;
-        border-radius: 44px;
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
       }
-
-      .index-header h1 {
-        font-size: 2.4rem;
-      }
-
-      .full-name-badge {
-        font-size: 0.95rem;
-        padding: 0.3rem 1rem 0.3rem 1rem;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .avatar-icon {
-        width: 85px;
-        height: 85px;
-        font-size: 3.4rem;
-      }
-
-      .nav-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
-
-      .nav-card {
-        padding: 1.4rem 1.2rem;
-      }
-
-      .intro-blurb {
-        font-size: 0.95rem;
-        padding: 1rem 1.4rem;
-      }
-
-      .vibe-row {
-        gap: 0.8rem;
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
 
-    @media (max-width: 400px) {
-      .index-card {
-        padding: 1.8rem 1.2rem;
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
       }
     }
 
-    /* pulse animation – calm and refined */
-    .pulse-home {
-      animation: softPulse 3.2s ease-in-out infinite;
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: -200% center;
+      }
+      100% {
+        background-position: 200% center;
+      }
     }
 
     @keyframes softPulse {
-      0% { box-shadow: 0 0 0 0 rgba(74, 58, 255, 0.04); }
-      50% { box-shadow: 0 0 0 18px rgba(74, 58, 255, 0.01); }
-      100% { box-shadow: 0 0 0 0 rgba(74, 58, 255, 0.04); }
+      0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.12); }
+      50% { box-shadow: 0 0 0 25px rgba(37, 99, 235, 0.04); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.12); }
+    }
+
+    @keyframes borderGlow {
+      0% { border-color: rgba(37, 99, 235, 0.3); }
+      50% { border-color: rgba(37, 99, 235, 0.8); }
+      100% { border-color: rgba(37, 99, 235, 0.3); }
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .animate-fade-in-up {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .animate-fade-in {
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .animate-slide-left {
+      animation: slideInLeft 0.8s ease forwards;
+    }
+
+    .animate-slide-right {
+      animation: slideInRight 0.8s ease forwards;
+    }
+
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .animate-pulse-on-hover:hover {
+      animation: pulse 0.5s ease;
+    }
+
+    .delay-1 {
+      animation-delay: 0.1s;
+    }
+    .delay-2 {
+      animation-delay: 0.2s;
+    }
+    .delay-3 {
+      animation-delay: 0.3s;
+    }
+    .delay-4 {
+      animation-delay: 0.4s;
+    }
+    .delay-5 {
+      animation-delay: 0.5s;
+    }
+
+    /* ===== PARTICLE NETWORK CANVAS ===== */
+    #particle-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      background: transparent;
+    }
+
+    /* ===== HEADER / NAV ===== */
+    header {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+      background-color: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      animation: fadeIn 0.8s ease;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.8rem;
+      letter-spacing: -0.5px;
+      color: #0b1a33;
+      transition: transform 0.3s ease;
+      text-decoration: none;
+      line-height: 1.2;
+    }
+
+    .logo:hover {
+      transform: scale(1.02);
+    }
+
+    .logo span {
+      color: #2563eb;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      font-weight: 500;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #1e293b;
+      transition: color 0.3s ease, transform 0.3s ease;
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #2563eb;
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #2563eb;
+      transform: translateY(-2px);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-links a.active {
+      color: #2563eb;
+    }
+
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 0 3rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ===== PROFILE IMAGE - ENLARGED ===== */
+    .profile-wrapper {
+      margin-bottom: 2rem;
+      animation: fadeInUp 0.6s ease;
+      position: relative;
+    }
+
+    /* Glowing ring behind the profile image */
+    .profile-wrapper::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      border-radius: 50%;
+      background: conic-gradient(from 0deg, #2563eb, #60a5fa, #93c5fd, #2563eb);
+      opacity: 0.3;
+      animation: spin 6s linear infinite;
+      z-index: -1;
+    }
+
+    .profile-image {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid white;
+      box-shadow: 0 8px 30px rgba(37, 99, 235, 0.2);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      animation: softPulse 3s ease-in-out infinite;
+      display: block;
+      background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+      position: relative;
+      z-index: 1;
+    }
+
+    .profile-image:hover {
+      transform: scale(1.06) rotate(-3deg);
+      box-shadow: 0 12px 45px rgba(37, 99, 235, 0.35);
+      border-color: #2563eb;
+      animation: borderGlow 1.5s ease-in-out infinite;
+    }
+
+    /* Fallback/placeholder if image fails to load */
+    .profile-image-placeholder {
+      display: none;
+    }
+
+    .profile-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      box-shadow: inset 0 0 20px rgba(37, 99, 235, 0.1);
+    }
+
+    .profile-name {
+      margin-top: 1.2rem;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #0b1a33;
+      animation: fadeInUp 0.6s ease 0.1s both;
+      letter-spacing: -0.3px;
+    }
+
+    .profile-title {
+      font-size: 1rem;
+      color: #64748b;
+      font-weight: 400;
+      animation: fadeInUp 0.6s ease 0.15s both;
+      background: rgba(37, 99, 235, 0.06);
+      padding: 0.2rem 1.2rem;
+      border-radius: 20px;
+      display: inline-block;
+      margin-top: 0.3rem;
+    }
+
+    .hero-badge {
+      background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+      color: #1e4f8a;
+      padding: 0.4rem 1.2rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      margin-bottom: 1.5rem;
+      animation: fadeInUp 0.6s ease 0.2s both;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hero-badge:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+    }
+
+    .hero h1 {
+      font-size: 4.2rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+      letter-spacing: -1px;
+      animation: fadeInUp 0.6s ease 0.3s both;
+    }
+
+    .hero h1 .highlight {
+      color: #2563eb;
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero h1 .highlight::after {
+      content: '';
+      position: absolute;
+      bottom: 8px;
+      left: 0;
+      width: 100%;
+      height: 12px;
+      background: linear-gradient(90deg, rgba(37, 99, 235, 0.1), rgba(37, 99, 235, 0.25), rgba(37, 99, 235, 0.1));
+      background-size: 200% auto;
+      z-index: -1;
+      border-radius: 4px;
+      animation: shimmer 3s linear infinite;
+    }
+
+    .hero-subtitle {
+      font-size: 1.8rem;
+      font-weight: 300;
+      color: #334155;
+      margin-bottom: 1.2rem;
+      animation: fadeInUp 0.6s ease 0.4s both;
+    }
+
+    .hero-description {
+      max-width: 680px;
+      font-size: 1.15rem;
+      color: #475569;
+      margin-bottom: 2.8rem;
+      padding: 0 1rem;
+      animation: fadeInUp 0.6s ease 0.5s both;
+    }
+
+    /* Tech stack pills */
+    .tech-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.8rem 1.2rem;
+      margin-bottom: 3rem;
+      animation: fadeInUp 0.6s ease 0.6s both;
+    }
+
+    .tech-pills span {
+      background-color: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(4px);
+      border: 1px solid #e2e8f0;
+      padding: 0.4rem 1.4rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #1e293b;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: default;
+    }
+
+    .tech-pills span:hover {
+      border-color: #2563eb;
+      background-color: rgba(248, 250, 255, 0.95);
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.12);
+    }
+
+    /* ===== STATS ===== */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0 1rem;
+      width: 100%;
+      max-width: 800px;
+      border-top: 1px solid rgba(226, 232, 240, 0.6);
+      padding-top: 3rem;
+      animation: fadeInUp 0.6s ease 0.7s both;
+    }
+
+    .stat-item {
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .stat-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .stat-number {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #0b1a33;
+      letter-spacing: -0.5px;
+      transition: color 0.3s ease;
+    }
+
+    .stat-item:hover .stat-number {
+      color: #2563eb;
+    }
+
+    .stat-label {
+      font-size: 0.95rem;
+      color: #64748b;
+      font-weight: 400;
+      margin-top: 0.2rem;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      padding: 2.5rem 0;
+      border-top: 1px solid rgba(226, 232, 240, 0.5);
+      margin-top: 2rem;
+      color: #64748b;
+      font-size: 0.95rem;
+      animation: fadeIn 1s ease 0.5s both;
+      position: relative;
+      z-index: 2;
+      background-color: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(4px);
+    }
+
+    footer .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.8rem;
+      margin-top: 1rem;
+      font-size: 1.4rem;
+    }
+
+    footer .social-links a {
+      color: #475569;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: inline-block;
+    }
+
+    footer .social-links a:hover {
+      color: #2563eb;
+      transform: translateY(-4px) scale(1.1);
+    }
+
+    footer .social-links a:active {
+      transform: scale(0.95);
+    }
+
+    footer .fa-code {
+      color: #2563eb;
+      transition: transform 0.5s ease;
+    }
+
+    footer .fa-code:hover {
+      transform: rotate(10deg) scale(1.1);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 850px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .about-image-placeholder {
+        order: -1;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+      .hero-subtitle {
+        font-size: 1.3rem;
+      }
+      .container {
+        padding: 0 1.2rem;
+      }
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+      }
+      .nav-links {
+        gap: 1.2rem;
+        font-size: 0.95rem;
+      }
+      .logo {
+        font-size: 1.5rem;
+      }
+      .profile-image {
+        width: 150px;
+        height: 150px;
+      }
+      .profile-wrapper::before {
+        top: -8px;
+        left: -8px;
+        right: -8px;
+        bottom: -8px;
+      }
+      .profile-name {
+        font-size: 1.2rem;
+      }
+      .profile-title {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .tech-pills span {
+        font-size: 0.8rem;
+        padding: 0.2rem 1rem;
+      }
+      .hero {
+        padding: 2rem 0 1.5rem;
+      }
+      .profile-image {
+        width: 130px;
+        height: 130px;
+      }
+      .profile-wrapper::before {
+        top: -6px;
+        left: -6px;
+        right: -6px;
+        bottom: -6px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="index-card">
+  <!-- ===== PARTICLE NETWORK CANVAS ===== -->
+  <canvas id="particle-canvas"></canvas>
 
-    <!-- header: full name in badge + tagline -->
-    <div class="index-header">
-      <div class="avatar-icon pulse-home">
-        <i class="fas fa-hand-peace"></i>
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="container">
+      <nav>
+        <a href="index.html" class="logo">Fotso Wilfried<br><span>Brayan junior</span></a>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <!-- ===== HERO ===== -->
+      <section class="hero">
+
+        <!-- ===== PROFILE IMAGE ===== -->
+        <div class="profile-wrapper">
+          <img src="Eren.png" alt="Fotso Wilfried" class="profile-image" onerror="this.style.display='none'; document.querySelector('.profile-image-placeholder').style.display='flex';">
+          <div class="profile-image-placeholder">
+            <i class="fas fa-user-circle"></i>
+          </div>
+
+          <div class="profile-name">Fotso Wilfried Brayan junior</div>
+          <div class="profile-title">Software Engineer</div>
+        </div>
+
+        <div class="hero-badge">
+          <i class="fas fa-code" style="margin-right: 6px;"></i> Ready to Innovate
+        </div>
+        <h1>
+          <span class="highlight">Software</span><br>Engineer
+        </h1>
+        <p class="hero-subtitle">Tech Enthusiast</p>
+        <p class="hero-description">
+          Building Modern, Full-Stack, and User-Centric Web Applications with Cutting-Edge Technologies.
+        </p>
+
+        <!-- Tech stack pills -->
+        <div class="tech-pills">
+          <span>Html</span>
+          <span>CSS</span>
+        </div>
+
+        <!-- ===== STATS ===== -->
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">24</div>
+            <div class="stat-label">Total Projects</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">Professional Skills</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3.5</div>
+            <div class="stat-label">Years of Experience</div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <p>© 2026 Fotso Wilfried. All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://github.com/jude237-h/fotso-wilfried" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/fotso junior" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.facebook.com/Jude Sharpe" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://wa.me/237653718185" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="mailto:fotsojun30@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
       </div>
-      <h1>FOTSO</h1>
-      
-      <!-- full name badge: WILFRIED BRAYAN JUNIOR -->
-      <div class="full-name-badge">
-        <i class="fas fa-feather-alt"></i>
-        <span class="name-text">WILFRIED BRAYAN JUNIOR</span>
-        <i class="fas fa-circle" style="font-size: 0.35rem; opacity: 0.25; margin: 0 2px;"></i>
-        <i class="fas fa-bolt" style="font-size: 0.65rem; opacity: 0.5;"></i>
-      </div>
-
-      <div class="tagline">
-        <i class="fas fa-bolt"></i>
-        <span>builder · creator · instant</span>
-      </div>
+      <p style="margin-top: 1rem; font-size: 0.85rem; color: #94a3b8;">
+        <i class="fas fa-code" style="margin-right: 4px;"></i> Built with modern web technologies
+      </p>
     </div>
-
-    <!-- intro – updated with full name -->
-    <div class="intro-blurb">
-      <i class="fas fa-quote-left" style="opacity: 0.3; margin-right: 4px;"></i>
-      <strong>FOTSO WILFRIED BRAYAN JUNIOR</strong> — I craft experiences with care.
-      <span style="display: inline-block; margin: 0 6px;">·</span> 
-      <strong>about</strong> tells my story, <strong>contact</strong> opens the door.
-      <i class="fas fa-quote-right" style="opacity: 0.3; margin-left: 4px;"></i>
-    </div>
-
-    <!-- navigation: about + contact -->
-    <div class="nav-grid">
-      <!-- about -->
-      <a href="about.html" class="nav-card" aria-label="About page">
-        <i class="fas fa-user-astronaut"></i>
-        <span class="nav-label">About</span>
-        <span class="nav-desc">who I am, what drives me</span>
-        <span class="nav-arrow"><i class="fas fa-arrow-right"></i></span>
-      </a>
-
-      <!-- contact -->
-      <a href="contact-us.html" class="nav-card" aria-label="Contact page">
-        <i class="fas fa-envelope-open-text"></i>
-        <span class="nav-label">Contact</span>
-        <span class="nav-desc">reach out, let's connect</span>
-        <span class="nav-arrow"><i class="fas fa-arrow-right"></i></span>
-      </a>
-    </div>
-
-    <!-- vibe / extra -->
-    <div class="vibe-row">
-      <span class="vibe-item"><i class="fas fa-bolt"></i> instant</span>
-      <span class="vibe-item"><i class="fas fa-heart"></i> human</span>
-      <span class="vibe-item"><i class="fas fa-rocket"></i> built with care</span>
-    </div>
-
-    <!-- footer – includes full name -->
-    <div class="footnote-index">
-      <i class="fas fa-asterisk" style="font-size: 0.5rem;"></i>
-      <span>always open · always building</span>
-      <i class="fas fa-circle" style="font-size: 0.25rem; opacity: 0.25;"></i>
-      <span class="foot-name">
-        <i class="fas fa-crown" style="font-size: 0.6rem; opacity: 0.3; margin-right: 4px;"></i>
-        FOTSO WILFRIED B. J.
-      </span>
-    </div>
-
-    <!-- tiny interactive hint -->
-    <div style="margin-top: 0.7rem; font-size: 0.6rem; letter-spacing: 0.2px; color: #6b7fa5; opacity: 0.2; user-select: none; text-align: center;">
-      <i class="fas fa-mouse-pointer"></i> double‑click card · press "H" for home
-    </div>
-  </div>
+  </footer>
 
   <script>
+    // ===== PARTICLE NETWORK ANIMATION =====
     (function() {
-      const card = document.querySelector('.index-card');
-      if (card) {
-        card.addEventListener('dblclick', function(e) {
-          if (e.target.closest('a')) return;
-          alert('🏠 Welcome home, FOTSO WILFRIED BRAYAN JUNIOR. (double-click magic)');
-        });
+      const canvas = document.getElementById('particle-canvas');
+      const ctx = canvas.getContext('2d');
+      let width, height;
+      let particles = [];
+      const particleCount = 80;
+      const maxDistance = 150;
+      let mouse = { x: null, y: null };
+
+      function resize() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = width;
+        canvas.height = height;
       }
 
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'h' || e.key === 'H') {
-          if (!e.ctrlKey && !e.metaKey && !e.altKey) {
-            e.preventDefault();
-            alert('🏡 Home · FOTSO WILFRIED BRAYAN JUNIOR — you pressed “H” for hub.');
+      function createParticles() {
+        particles = [];
+        for (let i = 0; i < particleCount; i++) {
+          particles.push({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            vx: (Math.random() - 0.5) * 0.6,
+            vy: (Math.random() - 0.5) * 0.6,
+            radius: Math.random() * 2.5 + 1.5
+          });
+        }
+      }
+
+      function drawParticles() {
+        ctx.clearRect(0, 0, width, height);
+        
+        // Draw connections first (behind particles)
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            
+            if (distance < maxDistance) {
+              const opacity = 1 - (distance / maxDistance);
+              ctx.beginPath();
+              ctx.strokeStyle = `rgba(37, 99, 235, ${opacity * 0.4})`;
+              ctx.lineWidth = 0.8;
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.stroke();
+            }
           }
         }
-      });
 
-      console.log('%c🏠 FOTSO WILFRIED BRAYAN JUNIOR · index hub', 'font-size: 16px; font-weight: 600; color: #4a3aff; background: #edf0ff; padding: 6px 14px; border-radius: 30px;');
-      console.log('%c✨ double‑click the card or press "H" for a home note', 'font-size: 12px; color: #2d3f6b;');
+        // Draw particles
+        for (let p of particles) {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(37, 99, 235, 0.7)';
+          ctx.fill();
+        }
+
+        // Connect to mouse
+        if (mouse.x !== null && mouse.y !== null) {
+          for (let p of particles) {
+            const dx = p.x - mouse.x;
+            const dy = p.y - mouse.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            if (distance < maxDistance) {
+              const opacity = 1 - (distance / maxDistance);
+              ctx.beginPath();
+              ctx.strokeStyle = `rgba(37, 99, 235, ${opacity * 0.3})`;
+              ctx.lineWidth = 1;
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(mouse.x, mouse.y);
+              ctx.stroke();
+            }
+          }
+        }
+      }
+
+      function updateParticles() {
+        for (let p of particles) {
+          p.x += p.vx;
+          p.y += p.vy;
+
+          if (p.x < 0 || p.x > width) p.vx *= -1;
+          if (p.y < 0 || p.y > height) p.vy *= -1;
+        }
+      }
+
+      function animate() {
+        updateParticles();
+        drawParticles();
+        requestAnimationFrame(animate);
+      }
+
+      function onMouseMove(e) {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+      }
+
+      function onMouseLeave() {
+        mouse.x = null;
+        mouse.y = null;
+      }
+
+      function init() {
+        resize();
+        createParticles();
+        animate();
+        window.addEventListener('resize', () => {
+          resize();
+          createParticles();
+        });
+        window.addEventListener('mousemove', onMouseMove);
+        window.addEventListener('mouseleave', onMouseLeave);
+      }
+
+      // Start when DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
     })();
   </script>
 
